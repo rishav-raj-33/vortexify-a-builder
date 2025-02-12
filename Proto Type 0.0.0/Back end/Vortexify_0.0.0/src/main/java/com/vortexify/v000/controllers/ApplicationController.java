@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vortexify.v000.payloads.ValidateRequestBody;
+import com.vortexify.v000.services.DockerService;
 import com.vortexify.v000.services.GitHubServices;
+import com.vortexify.v000.services.TerraformService;
 
 @RestController
 @RequestMapping("/test")
@@ -18,8 +20,22 @@ public class ApplicationController {
 	@Autowired
 	private GitHubServices gitHubService;
 	
+	@Autowired
+	private TerraformService teraformService;
+	
+	
+	@Autowired
+	private DockerService dockerService;
+	
+	
+	
+	
 	@GetMapping("/")
-	public ResponseEntity<Boolean> validateUrl(@RequestBody ValidateRequestBody requestBody){
+	public ResponseEntity<Boolean> driverController(@RequestBody ValidateRequestBody requestBody){
+		
+		
+		
+		
 		return new ResponseEntity<>(this.gitHubService.GetCode(requestBody.getUrl()),HttpStatus.OK);
 	}
 
