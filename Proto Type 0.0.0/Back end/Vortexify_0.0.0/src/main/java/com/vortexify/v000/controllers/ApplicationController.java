@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vortexify.v000.payloads.ValidateRequestBody;
 import com.vortexify.v000.services.DockerService;
 import com.vortexify.v000.services.GitHubServices;
-import com.vortexify.v000.services.TerraformService;
+
 
 @RestController
 @RequestMapping("/test")
@@ -20,8 +20,7 @@ public class ApplicationController {
 	@Autowired
 	private GitHubServices gitHubService;
 	
-	@Autowired
-	private TerraformService teraformService;
+
 	
 	
 	@Autowired
